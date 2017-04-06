@@ -18,15 +18,18 @@ namespace global_Vars
 {
     int* argc;
     char* argv[];
-    initialize_Global_Vars (unsigned int* argc, char* argv[])
-    {
-        
+    initialize_Global_Vars (unsigned int* temp_argc, char* temp_argv[])
+    {       
+        /* Set the arguments into global memory */
+        argc = temp_argc;
+        argv = temp_argv;
     }
 }
 
 int main (unsigned int argc, char* argv[]) 
 {
     
+    global_Vars::initialize_Global_Vars(argc, argv);
     
     return 0;
 }
