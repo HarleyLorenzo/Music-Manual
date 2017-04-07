@@ -2,11 +2,11 @@ CXX=@CXX@
 LD=@CXX@
 CXXFLAGS=@CXXFLAGS@
 
-all: music-match
+all: music-manual
 
-music-match: main.o
+music-manual: main.o
 	$(LD) -o $@ $^
 
 .PHONY: clean
 clean:
-	rm -f music-match *.o
+	rm -f music-manual *.o
