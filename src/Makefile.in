@@ -1,0 +1,12 @@
+CXX=@CXX@
+LD=@CXX@
+CXXFLAGS=@CXXFLAGS@
+
+all: music-match
+
+music-match: main.o
+	$(LD) -o $@ $^
+
+.PHONY: clean
+clean:
+	rm -f music-match *.o
