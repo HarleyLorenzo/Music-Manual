@@ -13,7 +13,7 @@
 /* Header files we need */
 #include "main.hh"
 
-int main (unsigned int argc, char* argv[]) 
+int main (int argc, char* argv[]) 
 {
     
     global_Vars::initialize_Global_Vars(&argc, &argv);
