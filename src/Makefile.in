@@ -1,0 +1,12 @@
+CXX=@CXX@
+LD=@CXX@
+CXXFLAGS=@CXXFLAGS@
+
+all: music-manual
+
+music-manual: main.o
+	$(LD) -o $@ $^
+
+.PHONY: clean
+clean:
+	rm -f music-manual *.o
