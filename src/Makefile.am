@@ -1,4 +1,12 @@
-CFLAGS = --pedantic -Wall -std=c++14
+# c++ preprocessor flags
+CPPFLAGS =
 
-bin_PROGRAMS = music_manual
-music_manual_SOURCES = main.cc main.hh
+# c++ flags
+CXXFLAGS = --pedantic -Wall -std=c++14
+
+# linker flags
+LDFLAGS =
+
+# musicmanual target
+bin_PROGRAMS = musicmanual
+musicmanual_SOURCES = main.cc main.hh
