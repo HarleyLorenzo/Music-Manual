@@ -1,5 +1,5 @@
 language: c++
-compiler g++-5.4
+compiler: g++-5.4
 
 script: ./configure && make
 
