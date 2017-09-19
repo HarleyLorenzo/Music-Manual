@@ -6,9 +6,12 @@ script: ./configure && make
 before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get -qq update
-  - sudo apt-get -qq install gcc-5
-  - sudo apt-get -qq install automake
-  - g++ -v
+
+addons:
+    apt:
+        packages:
+          - gcc-5
+          - automake
 
 matrix:
     include:
@@ -19,4 +22,6 @@ matrix:
           - g++-5
           - automake
         env:
-          - MATRIX_EVAL="CC=gcc && CXX=g++"
+          - COMPILER=g++-5
+          - CC=gcc=5
+          - CXX=g++-5
