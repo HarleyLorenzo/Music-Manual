@@ -3,14 +3,17 @@ compiler: g++
 sudo: required
 dist: trusty
 
-script: ./configure && make
-
 before_install:
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
 install:
   - sudo apt-get install -qq g++-5
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 100
+
+before_script:
+  - touch configure.ac aclocal.m4 configure Makefile.am Makefile.in
+
+script: ./configure && make
 
 matrix:
     include:
