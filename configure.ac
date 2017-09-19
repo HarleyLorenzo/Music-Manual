@@ -11,7 +11,7 @@ AC_PROG_CXX
 # Config macros
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_HEADERS([config.h])
-AC_CONFIG_SRCDIR([main.cc])
+AC_CONFIG_SRCDIR([src/main.cc])
 AC_CONFIG_FILES([Makefile src/Makefile])
 
 # Initiate automake

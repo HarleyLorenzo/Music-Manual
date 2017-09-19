@@ -584,7 +584,7 @@ PACKAGE_STRING='music-manual 0.1'
 PACKAGE_BUGREPORT='harleylorenzo512@gmail.com'
 PACKAGE_URL='https://github.com/HarleyLorenzo/music-manual'
 
-ac_unique_file="main.cc"
+ac_unique_file="src/main.cc"
 ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
