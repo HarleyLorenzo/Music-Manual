@@ -4,10 +4,10 @@ compiler: g++-5.4
 script: ./configure && make
 
 before_install:
-    sudo apt-get -qq update
-    sudo apt-get install g++-5
-    sudo apt-get install automake
-    g++ -v
+  - sudo apt-get -qq update
+  - sudo apt-get install g++-5
+  - sudo apt-get install automake
+  - g++ -v
 
 matrix:
     include:
