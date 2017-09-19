@@ -9,7 +9,7 @@ before_install:
   - sudo apt-get update -qq
 install:
   - sudo apt-get install -qq g++-5
-  - sudo apt-get install automake-1.15
+  - sudo apt-get install automake
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 100
 
 matrix:
