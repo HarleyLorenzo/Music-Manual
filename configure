@@ -1799,7 +1799,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 
 
-# Setting C++ and checking compiler
+# setting C++ and checking compiler
 ac_ext=cpp
 ac_cpp='$CXXCPP $CPPFLAGS'
 ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
@@ -2314,7 +2314,7 @@ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ex
 ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
 
 
-# Config macros
+# setup build-aux as the auxiliary build directory
 ac_aux_dir=
 for ac_dir in build-aux "$srcdir"/build-aux; do
   if test -f "$ac_dir/install-sh"; then
@@ -2344,13 +2344,19 @@ ac_config_sub="$SHELL $ac_aux_dir/config.sub"  # Please don't use this var.
 ac_configure="$SHELL $ac_aux_dir/configure"  # Please don't use this var.
 
 
+
+# setup the config.h header
 ac_config_headers="$ac_config_headers config.h"
 
 
-ac_config_files="$ac_config_files Makefile src/Makefile"
+# main.cc is the unique file to check
 
 
-# Initiate automake
+# set only Makefile
+ac_config_files="$ac_config_files Makefile"
+
+
+# initiate automake, subdir objects for forward-compatability
 am__api_version='1.15'
 
 # Find a good install program.  We prefer a C program (faster),
@@ -3122,7 +3128,7 @@ END
 fi
 
 
-# Outputting to the makefiles
+# outputting to the makefiles
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
 # tests run on this system so they can be shared between configure
@@ -3851,7 +3857,6 @@ do
   case $ac_config_target in
     "config.h") CONFIG_HEADERS="$CONFIG_HEADERS config.h" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
-    "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;

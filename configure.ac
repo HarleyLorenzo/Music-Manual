@@ -17,11 +17,11 @@ AC_CONFIG_HEADERS([config.h])
 # main.cc is the unique file to check
 AC_CONFIG_SRCDIR([src/main.cc])
 
-# Makefiles we need
-AC_CONFIG_FILES([Makefile src/Makefile])
+# set only Makefile
+AC_CONFIG_FILES([Makefile])
 
-# initiate automake
-AM_INIT_AUTOMAKE
+# initiate automake, subdir objects for forward-compatability 
+AM_INIT_AUTOMAKE([subdir-objects])
 
 # outputting to the makefiles
 AC_OUTPUT
