@@ -1,16 +1,11 @@
 language: c++
-compiler: g++-5.4
+compiler: g++
+dist: xenial
 
 script: ./configure && make
 
 before_install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 100
-
-addons:
-    apt:
-        packages:
-          - gcc-5
-          - automake
 
 matrix:
     include:
@@ -20,7 +15,8 @@ matrix:
         packages:
           - g++-5
           - automake
-           - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 100
+        sources:
+          - ubuntu-toolchain-r-test
         env:
           - COMPILER=g++-5
           - CC=gcc=5
