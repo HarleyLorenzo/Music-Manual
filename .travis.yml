@@ -4,8 +4,7 @@ compiler: g++-5.4
 script: ./configure && make
 
 before_install:
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-  - sudo apt-get -qq update
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 100
 
 addons:
     apt:
@@ -21,6 +20,7 @@ matrix:
         packages:
           - g++-5
           - automake
+           - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 100
         env:
           - COMPILER=g++-5
           - CC=gcc=5
