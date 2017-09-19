@@ -16,5 +16,6 @@ matrix:
           - ubuntu-toolchain-r-test
         packages:
           - g++-5
+          - automake
         env:
           - MATRIX_EVAL="CC=gcc && CXX=g++"
