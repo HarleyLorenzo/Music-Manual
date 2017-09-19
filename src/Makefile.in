@@ -86,7 +86,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = music_manual$(EXEEXT)
+bin_PROGRAMS = musicmanual$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -99,9 +99,9 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_music_manual_OBJECTS = main.$(OBJEXT)
-music_manual_OBJECTS = $(am_music_manual_OBJECTS)
-music_manual_LDADD = $(LDADD)
+am_musicmanual_OBJECTS = main.$(OBJEXT)
+musicmanual_OBJECTS = $(am_musicmanual_OBJECTS)
+musicmanual_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -115,7 +115,7 @@ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
 am__v_at_0 = @
 am__v_at_1 = 
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
-depcomp = $(SHELL) $(top_srcdir)/depcomp
+depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
@@ -143,8 +143,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(music_manual_SOURCES)
-DIST_SOURCES = $(music_manual_SOURCES)
+SOURCES = $(musicmanual_SOURCES)
+DIST_SOURCES = $(musicmanual_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -169,7 +169,8 @@ am__define_uniq_tagged_files = \
   done | $(am__uniquify_input)`
 ETAGS = etags
 CTAGS = ctags
-am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp
+am__DIST_COMMON = $(srcdir)/Makefile.in \
+	$(top_srcdir)/build-aux/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
@@ -256,8 +257,12 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-CFLAGS = --pedantic -Wall -std=c++14
-music_manual_SOURCES = main.cc main.hh
+
+# automake c++ flags
+AM_CPPFLAGS = 
+AM_CXXFLAGS = -std=c++14
+AM_LDFLAGS = 
+musicmanual_SOURCES = main.cc main.hh
 all: all-am
 
 .SUFFIXES:
@@ -334,9 +339,9 @@ uninstall-binPROGRAMS:
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 
-music_manual$(EXEEXT): $(music_manual_OBJECTS) $(music_manual_DEPENDENCIES) $(EXTRA_music_manual_DEPENDENCIES) 
-	@rm -f music_manual$(EXEEXT)
-	$(AM_V_CXXLD)$(CXXLINK) $(music_manual_OBJECTS) $(music_manual_LDADD) $(LIBS)
+musicmanual$(EXEEXT): $(musicmanual_OBJECTS) $(musicmanual_DEPENDENCIES) $(EXTRA_musicmanual_DEPENDENCIES) 
+	@rm -f musicmanual$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(musicmanual_OBJECTS) $(musicmanual_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)

@@ -1,11 +1,7 @@
-# c++ preprocessor flags
-CPPFLAGS =
-
-# c++ flags
-CXXFLAGS = --pedantic -Wall -std=c++14
-
-# linker flags
-LDFLAGS =
+# automake c++ flags
+AM_CPPFLAGS =
+AM_CXXFLAGS = -std=c++14
+AM_LDFLAGS =
 
 # musicmanual target
 bin_PROGRAMS = musicmanual
