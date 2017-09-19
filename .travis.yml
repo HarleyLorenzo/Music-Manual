@@ -11,5 +11,6 @@ matrix:
         packages:
           - g++-5.4
           - aclocal-1.15
+          - automake
         env:
           - MATRIX_EVAL="CC=gcc-5.4 && CXX=g++-5.4"
