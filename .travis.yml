@@ -7,6 +7,7 @@ before_install:
     sudo apt-get -qq update
     sudo apt-get install g++-5
     sudo apt-get install automake
+    g++ -v
 
 matrix:
     include:
@@ -16,4 +17,4 @@ matrix:
         packages:
           - g++-5
         env:
-          - MATRIX_EVAL="CC=gcc-5.4 && CXX=g++-5.4"
+          - MATRIX_EVAL="CC=gcc && CXX=g++"
