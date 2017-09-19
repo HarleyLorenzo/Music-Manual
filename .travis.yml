@@ -4,9 +4,10 @@ compiler: g++-5.4
 script: ./configure && make
 
 before_install:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get -qq update
-  - sudo apt-get install gcc-5
-  - sudo apt-get install automake
+  - sudo apt-get -qq install gcc-5
+  - sudo apt-get -qq install automake
   - g++ -v
 
 matrix:
