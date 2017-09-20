@@ -103,7 +103,7 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
-am_musicmanual_OBJECTS = src/main.$(OBJEXT)
+am_musicmanual_OBJECTS = src/musicmanual.$(OBJEXT)
 musicmanual_OBJECTS = $(am_musicmanual_OBJECTS)
 musicmanual_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -287,7 +287,7 @@ AUTOMAKE_OPTIONS = foreign
 AM_CPPFLAGS = 
 AM_CXXFLAGS = -std=c++14
 AM_LDFLAGS = 
-musicmanual_SOURCES = src/main.cc src/main.hh
+musicmanual_SOURCES = src/musicmanual.cc src/musicmanual.hh
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -389,7 +389,8 @@ src/$(am__dirstamp):
 src/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) src/$(DEPDIR)
 	@: > src/$(DEPDIR)/$(am__dirstamp)
-src/main.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/musicmanual.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 
 musicmanual$(EXEEXT): $(musicmanual_OBJECTS) $(musicmanual_DEPENDENCIES) $(EXTRA_musicmanual_DEPENDENCIES) 
 	@rm -f musicmanual$(EXEEXT)
@@ -402,7 +403,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/musicmanual.Po@am__quote@
 
 .cc.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\

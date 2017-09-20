@@ -12,4 +12,4 @@ AUTOMAKE_OPTIONS = foreign
 
 # musicmanual target
   bin_PROGRAMS = musicmanual
-  musicmanual_SOURCES = src/main.cc src/main.hh
+  musicmanual_SOURCES = src/musicmanual.cc src/musicmanual.hh
