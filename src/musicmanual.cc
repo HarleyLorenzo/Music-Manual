@@ -11,12 +11,12 @@
 /* Other libraries */
 
 /* Header files we need */
-#include "main.hh"
+#include "musicmanual.hh"
 
-int main (int argc, char* argv[]) 
+int main (int argc, char* argv[])
 {
-    
+
     global_Vars::initialize_Global_Vars(&argc, &argv);
-    
+
     return 0;
 }

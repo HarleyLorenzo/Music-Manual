@@ -18,7 +18,7 @@ AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_HEADERS([config.h])
 
 # main.cc is the unique file to check
-AC_CONFIG_SRCDIR([src/main.cc])
+AC_CONFIG_SRCDIR([src/musicmanual.cc])
 
 # set only Makefile
 AC_CONFIG_FILES([Makefile])
