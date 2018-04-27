@@ -1,16 +1,19 @@
-/* 
- * Header file defining all the functions within main.cpp
+/*
+ *  Header file containing musicmanual.cc definitions to be included in
+ *  other source files
+ *  For license information, see COPYING
  */
 
-namespace global_Vars
-{
-    int* argc;
-    char*** argv;
-    void initialize_Global_Vars (int* temp_argc, char*** temp_argv)
-    {       
-        /* Set the arguments into global memory */
-        argc = temp_argc;
-        argv = temp_argv;
-    }
-}
+/* includes */
+#include <iostream>
 
+/* namespaces */
+namespace globalVars
+{
+  /* Namespace including all global varriables and their related functions */
+  int argc; /* global argc because musicmanual will need to access
+               these later */
+  std::string* argv; /* global argc because musicmanual will need to
+                        access these later */
+  int initializeGlobalVars (int*, char***);
+}

@@ -4,12 +4,12 @@ AC_PREREQ([2.69])
 # initialization
 AC_INIT([music-manual], [0.1], [harleylorenzo512@gmail.com], [music-manual], [https://github.com/HarleyLorenzo/music-manual])
 
+# require c++14 support
+ax_cxx_compile_stdcxx_14
+
 # setting C++ and checking compiler
 AC_LANG(C++)
 AC_PROG_CXX
-
-# require c++14 support
-ax_cxx_compile_stdcxx_14
 
 # setup build-aux as the auxiliary build directory
 AC_CONFIG_AUX_DIR([build-aux])
